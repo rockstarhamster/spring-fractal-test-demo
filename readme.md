@@ -1,42 +1,43 @@
-# Характеристики идеальных тестов
-- Проверяют всё важное, но не фиксируют неважное. 
-- Баланс между числом и охватом 
-- Быстро и просто
+# Test uselessness criteria
+- Desired behavior has not changed - test crashed
+- Desired behavior has changed - test did not fail
 
-# Термины:
-1. **Компонентный** - тест сервиса/компонента без зависимостей
-2. **Интеграционный** - тест сервиса/компонента с зависимостями
-3. **E2E** - тест сценария использования
+# Characteristics of ideal tests
+- Check everything that is important, but do not fix the unimportant.
+- Balance between number and reach
+- Fast and easy
 
-# Критерии бесполезности теста
- - Желаемое поведение не изменилось - тест упал 
- - Желаемое поведение изменилось - тест не упал
+# Terms:
+1. **Component** - service / component test without dependencies
+2. **Integration** - service / component test with dependencies
+3. **E2E** - use case test
 
-# Минусы подходов
-E2E тесты: 
-- Не масштабируются
-- Хрупкие
+# Cons of blindly writing tests
+E2E tests: 
+- Do not scale
+- Fragile
 
-Компонентные: 
-- Не полны
+Component: 
+- Partial, not full
 
-# Подстраховка: Фрактальное тестирование
+# Solution: Fractal testing
+Includes characteristics of ideal tests and excludes test uselessness criteria
 
-## Кейсы
+## Cases
 
-### Сломанный компонентный тест:
+### Broken component test:
 ![img.png](images/component.png)
 
-### Сломанный интеграционный тест:
+### Broken integration test:
 ![img_1.png](images/integration.png)
 
-### Сломанный контракт: 
+### Broken contract: 
 ![img_2.png](images/contract.png)
 
-### Сломанный Е2Е:
+### Broken Е2Е:
 ![img_3.png](images/e2e.png)
 
-# Используемые источники
+# Sources used
 - [Дмитрий Карловский - Фрактальное тестирование](https://habr.com/ru/post/510824/)
 - [Евгений Борисов, Кирилл Толкачев — Проклятие Spring Test](https://www.youtube.com/watch?v=7mZqJShu_3c&t=1644s&ab_channel=JUG.ru)
 - [Кирилл Толкачёв — Тестируем и плачем вместе со Spring Boot Test](https://www.youtube.com/watch?v=uc-cfX-5wQA&ab_channel=Heisenbug)
